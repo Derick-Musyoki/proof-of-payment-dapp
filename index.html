@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Proof of Payment DApp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+body { background-color: #f4f6f9; color: #333; }
+
+.logo img {
+    width: 400px;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #0B3C5D;
+    color: white;
+}
+
+.navbar h1 { font-size: 15px; }
+
+.btn-primary {
+    background-color: #1d72b8;
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    padding: 80px 8%;
+    text-align: center;
+    background-color: white;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #0B3C5D;
+}
+
+.hero p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* FORM SECTION */
+.form-section {
+    padding: 60px 8%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 400px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0B3C5D;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#walletAddress {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #1d72b8;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #eee;
+    font-size: 14px;
+    margin-top: 50px;
+}
+</style>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<div class="logo">
+    <img src="https://i.imgur.com/gYl3Mct.png" alt="Proof of payment Logo", width="300">
+</div>
+
+    <button id="connectBtn" class="btn-primary">Connect Wallet</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Record ETH Payments On-Chain</h1>
+    <p>Create immutable proof of freelance payments using blockchain technology.</p>
+    <p id="walletAddress"></p>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section">
+    <div class="form-container">
+        <h2>Record Payment</h2>
+
+        <form id="proofForm">
+
+            <label>Payer Address</label>
+            <input type="text" id="payerAddress" placeholder="Auto-filled after wallet connect" readonly>
+
+            <label>Receiver Address</label>
+            <input type="text" id="receiverAddress" required>
+
+            <label>Amount (ETH)</label>
+            <input type="text" id="amount" required>
+
+            <label>Description</label>
+            <input type="text" id="description" required>
+
+            <button type="submit" class="btn-primary">Record Payment</button>
+
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Proof of Payment DApp. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
